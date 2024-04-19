@@ -11,15 +11,23 @@ import {
   ratingAndLocation,
   description,
   loaderContainer,
-  loader
+  loader,
+  categoryContainer,
+  category,
 } from "./styles";
 
 import SidePanel from "./Refactor/SidePanel";
+import CustomModal from './Refactor/Modal';
 
 import { ReactComponent as EnabledLocation } from "../svg/EnabledLocationIcon.svg";
 import { ReactComponent as FavouriteIcon } from "../svg/heart.svg";
 import { ReactComponent as Rating } from "../svg/icon_star.svg";
-
+import { ReactComponent as Adults } from "../svg/Adults.svg";
+import { ReactComponent as Transmission } from "../svg/Transmission.svg";
+import { ReactComponent as Engine } from "../svg/engine.svg";
+import { ReactComponent as Kitchen } from "../svg/Kitchen(2).svg";
+import { ReactComponent as Bed } from "../svg/Bed.svg";
+import { ReactComponent as AirConditioner } from "../svg/airConditioner.svg";
 
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -32,6 +40,8 @@ const Catalog = () => {
   const [loading, setLoading] = useState(true);
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCamper, setSelectedCamper] = useState(null); 
 
   useEffect(() => {
     axios
@@ -77,6 +87,15 @@ const Catalog = () => {
     }
   };
 
+  const handleShowModal = (camper) => {
+    setSelectedCamper(camper);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <main style={{ marginTop: "30px" }}>
       {loading ? ( 
@@ -117,14 +136,22 @@ const Catalog = () => {
                 <div css={ratingAndLocation}>
                   <p>
                     <Rating />
-                    {ad.rating}({ad.reviews.length} Reviews)
+                    <u>{ad.rating}({ad.reviews.length} Reviews)</u>
                   </p>
                   <p>
-                    <EnabledLocation /> {ad.location}
+                    <EnabledLocation /> {ad.location.split(',')[1].trim()}, {ad.location.split(',')[0].trim()}
                   </p>
                 </div>
                 <p css={description}>{truncateText(ad.description, 70)}</p>
-                <button css={button}>Show more</button>
+                <div css={categoryContainer}>
+                      <div css={category}><Adults /> {ad.adults} adults</div>
+                      <div css={category}><Transmission /> {ad.transmission.charAt(0).toUpperCase() + ad.transmission.slice(1)}</div>
+                      <div css={category}><Engine /> {ad.engine.charAt(0).toUpperCase() + ad.engine.slice(1)}</div>
+                      <div css={category}><Kitchen />Kitchen</div>
+                      <div css={category}><Bed />{ad.details.beds} beds</div>
+                      <div css={category}><AirConditioner />AC</div>
+                  </div>
+               <button css={button} onClick={() => handleShowModal(ad)}>Show more</button>
               </div>
             </div>
           ))}
@@ -136,6 +163,13 @@ const Catalog = () => {
         </div>
         
       </div>
+      )}
+      {selectedCamper && (
+        <CustomModal
+          isOpen={showModal}
+          onRequestClose={handleCloseModal}
+          camper={selectedCamper}
+        />
       )}
     </main>
   );

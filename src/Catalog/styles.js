@@ -193,7 +193,6 @@ export const ratingAndLocation = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 24px;
 `;
 
 export const description = css`
@@ -213,14 +212,45 @@ export const loaderContainer = css`
 
 export const loader = css`
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid red;
   border-radius: 50%;
   width: 100px;
   height: 100px;
   animation: spin 1s linear infinite;
-  
+
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
+`;
+
+export const categoryContainer = css`
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+`;
+
+export const category = css`
+  border-radius: 100px;
+  background: rgb(242, 244, 247);
+  width: 23%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+`;
+
+export const nameAndClose = css`
+  display: flex;
+  justify-content: space-between;
 `;
