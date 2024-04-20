@@ -114,16 +114,15 @@ const Catalog = () => {
           <div css={loader}></div>
         </div>
       ) : (
-        <div css={containerStyles} className="catalog">
+        <div css={containerStyles}>
           <SidePanel locations={adverts.map(ad => ad.location)} />
           <div>
             {visibleAdverts.map((ad) => (
               <div
                 key={ad._id}
                 css={advertContainerStyles}
-                className="advert-container"
               >
-                <div className="gallery">
+                <div>
                   {ad.gallery.length > 0 && (
                     <div
                       css={galleryImageStyles}

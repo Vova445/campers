@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import {
-  searchFormStyles,
   sidePanelStyles,
   sidePanelItemStyles,
   hr,
@@ -53,7 +52,7 @@ const SidePanel = ({ locations }) => {
   };
 
   return (
-    <div css={searchFormStyles} className="search-form">
+    <div>
       <div css={sidePanelStyles}>
         <div css={topContainer}>
           <label htmlFor="location" css={locationLabel}>
@@ -76,6 +75,7 @@ const SidePanel = ({ locations }) => {
               ))}
             </select>
           </div>
+        </div>
         </div>
         <p css={filters}>Filters</p>
         <div css={sidePanelItemStyles}>
@@ -194,7 +194,7 @@ const SidePanel = ({ locations }) => {
             </button>
           </div>
         </div>
-      </div>
+   
       <button css={button}>Search</button>
     </div>
   );

@@ -170,7 +170,7 @@ const CustomModal = ({ isOpen, onRequestClose, camper }) => {
                 <div css={categoryFeatures}>
                   <Bed /> {camper.details.beds} beds
                 </div>
-                <div style={{ width: '160px' }} css={categoryFeatures}>
+                <div css={categoryFeatures}>
                   <AirConditioner /> {camper.details.airConditioner} air
                   conditioner
                 </div>

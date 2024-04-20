@@ -1,23 +1,39 @@
 import { css } from '@emotion/react';
 
-
 export const containerStyles = css`
   display: flex;
   justify-content: space-evenly;
-`;
+  gap: 20px;
+  padding: 0 10px;
 
-export const searchFormStyles = css`
-  width: 30%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    gap: 10px;
+    padding: 0 5px;
+  }
 `;
 
 export const sidePanelStyles = css`
   width: 30%;
+  margin-right: 20px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 export const sidePanelItemStyles = css`
-  margin-bottom: 64px;
-  margin-top: 14px;
-  width: 360px;
+  margin-bottom: 20px;
+  width: 100%;
 `;
 
 export const hr = css`
@@ -33,6 +49,16 @@ export const advertContainerStyles = css`
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    padding: 10px;
+  }
 `;
 
 export const galleryImageStyles = css`
@@ -43,6 +69,18 @@ export const galleryImageStyles = css`
   border-radius: 20px;
   margin-right: 24px;
   background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    width: 500px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    width: 300px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 export const button = css`
@@ -52,8 +90,13 @@ export const button = css`
   cursor: pointer;
   color: white;
   border: none;
+  transition: background 0.3s;
   &:hover {
     background: rgb(216, 67, 67);
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    padding: 12px 48px;
   }
 `;
 
@@ -63,20 +106,30 @@ export const loadMoreButton = css`
   border-radius: 200px;
   cursor: pointer;
   background-color: transparent;
-  transition: 0.3s;
+  transition: border-color 0.3s;
   display: flex;
   margin: 0 auto;
   &:hover {
     border: 1px solid rgb(228, 72, 72);
+  }
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    padding: 12px 24px;
   }
 `;
 
 export const nameAndPrice = css`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 40px;
-`;
 
+  @media (min-width: 320px) and (max-width: 550px) {
+    height: auto;
+    flex-direction: column;
+    /* gap: 8px; */
+  }
+`;
 export const locationInput = css`
   border-radius: 10px;
   background: rgb(247, 247, 247);
@@ -88,6 +141,10 @@ export const locationInput = css`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const locationLabel = css`
@@ -170,6 +227,9 @@ export const vehicleEquipmentBox = css`
   flex-wrap: wrap;
   gap: 10px;
   width: 360px;
+  @media screen and (min-width: 320px) and (max-width: 550px) {
+    width: 300px;
+  }
 `;
 
 export const subtitleFilter = css`
@@ -184,8 +244,12 @@ export const nameAndPriceText = css`
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
-`;
 
+  @media (min-width: 320px) and (max-width: 550px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+`;
 export const ratingAndLocation = css`
   display: flex;
   gap: 16px;
@@ -194,6 +258,11 @@ export const ratingAndLocation = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 export const description = css`
@@ -202,6 +271,11 @@ export const description = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 export const loaderContainer = css`
@@ -240,15 +314,21 @@ export const category = css`
   border-radius: 100px;
   background: rgb(242, 244, 247);
   width: 23%;
-  height: 44px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 18px;
+
+  @media (min-width: 320px) and (max-width: 550px) {
+    width: 46%;
+    height: 36px;
+    font-size: 12px;
+  }
 `;
 
 export const nameAndClose = css`
@@ -266,6 +346,12 @@ export const containerTwoInModal = css`
   flex-wrap: wrap;
   width: 365px;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const priceInModal = css`
@@ -291,11 +377,33 @@ export const modal = css`
   padding: 40px;
   height: 720px;
   overflow: auto;
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  @media (max-width: 550px) {
+    padding: 16px;
+    height: 70%;
+  }
 `;
 
 export const modalGallery = css`
   display: flex;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 550px) {
+    gap: 10px;
+  }
 `;
 
 export const descriptionText = css`
@@ -305,8 +413,11 @@ export const descriptionText = css`
   font-weight: 400;
   line-height: 24px;
   margin-top: 24px;
-`;
 
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
 
 export const featuresContainer = css`
   width: 500px;
@@ -314,6 +425,16 @@ export const featuresContainer = css`
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 24px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 550px) {
+    width: calc(100% - 20px);
+  }
 `;
 
 export const categoryFeatures = css`
@@ -330,12 +451,30 @@ export const categoryFeatures = css`
   font-weight: 500;
   line-height: 20px;
   padding: 0 10px;
+
+  @media (max-width: 768px) {
+    width: 40%;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const containerFeatues = css`
   display: flex;
   gap: 50px;
   flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 550px) {
+    gap: 10px;
+  }
 `;
 
 export const secondContainer = css`
@@ -343,12 +482,25 @@ export const secondContainer = css`
   flex-direction: column;
   gap: 24px;
   width: 450px;
-`;
 
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+`;
 export const details = css`
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 export const detailsItem = css`
@@ -381,6 +533,10 @@ export const formDiv = css`
   box-sizing: border-box;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 export const formTitle = css`
@@ -412,41 +568,66 @@ export const inputField = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+
+  @media (max-width: 768px) {
+    padding: 14px 0;
+    padding-left: 14px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const inputWithError = css`
-border: 2px solid red;
+  border: 2px solid red;
 `;
 
-
-export const reviewsContainer = css `
+export const reviewsContainer = css`
   display: flex;
   justify-content: space-between;
-`
 
-export const commentContainer  = css `
-display: flex;
-gap:24px;
-flex-direction: column;
-width: 430px;
-`
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-export const avatar = css `
-border-radius: 50%;
-background-color: rgb(242, 244, 247);
-width: 60px;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-color: rgb(228, 72, 72);
-font-family: Inter;
-font-size: 24px;
-font-weight: 600;
-line-height: 30px;
+  @media (max-width: 550px) {
+    gap: 20px;
+  }
+`;
+export const commentContainer = css`
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  width: 430px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 550px) {
+    width: calc(100% - 32px);
+  }
+`;
+export const avatar = css`
+  border-radius: 50%;
+  background-color: rgb(242, 244, 247);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(228, 72, 72);
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
 `;
 
-export const avatarAndName = css `
+export const avatarAndName = css`
   display: flex;
   align-items: center;
   gap: 16px;
@@ -456,10 +637,9 @@ export const customSelectStyles = css`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
 `;
 
-export const nameAndRating = css `
+export const nameAndRating = css`
   display: flex;
   flex-direction: column;
   color: rgb(16, 24, 40);
@@ -467,14 +647,14 @@ export const nameAndRating = css `
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
-  gap:4px;
-`
+  gap: 4px;
+`;
 
-export const reviewComment = css `
-margin-top: 16px;
-color: rgb(71, 84, 103);
-font-family: Inter;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-`
+export const reviewComment = css`
+  margin-top: 16px;
+  color: rgb(71, 84, 103);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+`;
