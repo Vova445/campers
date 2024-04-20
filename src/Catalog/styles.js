@@ -378,6 +378,7 @@ export const modal = css`
   height: 720px;
   overflow: auto;
   width: 50%;
+  border-radius: 20px;
 
   @media (max-width: 768px) {
     width: 90%;

@@ -137,7 +137,7 @@ const Catalog = () => {
                       €{parseFloat(ad.price).toFixed(2).toLocaleString()}{" "}
                       <FavouriteIcon 
                         style={{
-                          fill: favorites.includes(ad._id) ? "#E44848" : "none",
+                          fill: favorites.includes(ad._id) ? "#E44848" : "none", cursor: 'pointer'
                         }}
                         onClick={() => handleAddToFavorites(ad._id)}
                       />
