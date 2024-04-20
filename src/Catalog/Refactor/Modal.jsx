@@ -25,6 +25,8 @@ import {
   commentContainer,
   avatar,
   avatarAndName,
+  nameAndRating,
+  reviewComment
 } from '../styles';
 
 import Form from './BookingForm';
@@ -267,14 +269,18 @@ const CustomModal = ({ isOpen, onRequestClose, camper }) => {
                 <div key={index}>
                   <div css={avatarAndName}>
                     <div css={avatar}>{review.reviewer_name.charAt(0)}</div>
+                    <div css={nameAndRating}>
                     {review.reviewer_name}
                     <Rate allowHalf defaultValue={review.reviewer_rating} disabled />
                   </div>
-                  <div>{review.comment}</div>
+                  </div>
+                  <div css={reviewComment}>{review.comment}</div>
                 </div>
               ))}
             </div>
+            <div css={formDiv}>
             <Form />
+            </div>
           </div>
         </TabPane>
       </Tabs>

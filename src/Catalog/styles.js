@@ -459,3 +459,22 @@ export const customSelectStyles = css`
 
 `;
 
+export const nameAndRating = css `
+  display: flex;
+  flex-direction: column;
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  gap:4px;
+`
+
+export const reviewComment = css `
+margin-top: 16px;
+color: rgb(71, 84, 103);
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+`
