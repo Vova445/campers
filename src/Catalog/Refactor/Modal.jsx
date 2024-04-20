@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Tabs } from 'antd';
+import { Rate } from 'antd';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import {
@@ -267,11 +268,13 @@ const CustomModal = ({ isOpen, onRequestClose, camper }) => {
                   <div css={avatarAndName}>
                     <div css={avatar}>{review.reviewer_name.charAt(0)}</div>
                     {review.reviewer_name}
+                    <Rate allowHalf defaultValue={review.reviewer_rating} disabled />
                   </div>
                   <div>{review.comment}</div>
                 </div>
               ))}
             </div>
+            <Form />
           </div>
         </TabPane>
       </Tabs>

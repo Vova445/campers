@@ -33,7 +33,6 @@ const SidePanel = ({ locations }) => {
   const [selectedEquipment, setSelectedEquipment] = useState([]);
   const [selectedType, setSelectedType] = useState('');
 
-  // Фільтрація унікальних країн
   const uniqueCountries = Array.from(new Set(locations.map(location => location.split(',')[1].trim())));
 
   const handleLocationChange = event => {

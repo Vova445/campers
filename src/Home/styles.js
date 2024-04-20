@@ -37,7 +37,7 @@ export const cardStyle = css`
   text-align: center;
   background-color: #ffffff;
   border: 1px solid #e44848;
-  height: 280px; /* Фіксована висота */
+  height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

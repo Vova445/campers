@@ -12,8 +12,6 @@ const Form = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Валідація полів
     const errors = {};
     if (!name.trim()) {
       errors.name = 'Name is required';
