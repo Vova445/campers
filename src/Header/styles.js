@@ -7,6 +7,10 @@ export const headerStyle = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const navStyle = css`
@@ -15,10 +19,14 @@ export const navStyle = css`
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 10px;
   }
 
   li {
     margin-right: 20px;
+    @media screen and (max-width: 767px) {
+      margin: 10px 0;
+    }
   }
 
   a {

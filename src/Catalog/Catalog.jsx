@@ -33,6 +33,8 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../Redux/actions";
 
+
+
 const Catalog = () => {
   const [adverts, setAdverts] = useState([]);
   const [visibleAdverts, setVisibleAdverts] = useState([]);
@@ -59,6 +61,21 @@ const Catalog = () => {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showModal]);
+
+
+
 
   const loadMore = () => {
     const nextVisibleAdverts = adverts.slice(
@@ -147,9 +164,13 @@ const Catalog = () => {
                       <div css={category}><Adults /> {ad.adults} adults</div>
                       <div css={category}><Transmission /> {ad.transmission.charAt(0).toUpperCase() + ad.transmission.slice(1)}</div>
                       <div css={category}><Engine /> {ad.engine.charAt(0).toUpperCase() + ad.engine.slice(1)}</div>
-                      <div css={category}><Kitchen />Kitchen</div>
+                      {ad.details.kitchen && (<div css={category}><Kitchen />Kitchen</div>)}
                       <div css={category}><Bed />{ad.details.beds} beds</div>
-                      <div css={category}><AirConditioner />AC</div>
+                      {ad.details.airConditioner && (
+                      <div css={category}>
+                      <AirConditioner />AC
+                      </div>
+                        )}
                   </div>
                <button css={button} onClick={() => handleShowModal(ad)}>Show more</button>
               </div>

@@ -1,13 +1,21 @@
-/** @jsxImportSource @emotion/react */
-
 import React from "react";
+/** @jsxImportSource @emotion/react */
 import { Layout, Typography, Row, Col, Card } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
-import { containerStyles, contentStyles, titleStyles, cardStyle, iconStyle, title, titleCard, footer } from "./styles";
+import {
+  containerStyles,
+  contentStyles,
+  titleStyles,
+  cardStyle,
+  iconStyle,
+  title,
+  titleCard,
+  footer,
+  footerContent,
+  footerText,
+} from "./styles";
 const { Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;
-
-
 
 const HomePage = () => {
   return (
@@ -70,9 +78,9 @@ const HomePage = () => {
           </Row>
         </Content>
         <Footer css={footer}>
-          <div>
-            <Paragraph>
-              ©2024 Campervan Rentals Ukraine. All rights reserved.
+          <div css={footerContent}>
+            <Paragraph css={footerText}>
+              ©2024 Campervan Rentals Ukraine. Author Volodymyr Mikhnov.
             </Paragraph>
           </div>
         </Footer>

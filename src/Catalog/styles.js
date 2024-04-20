@@ -1,4 +1,5 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
+
 
 export const containerStyles = css`
   display: flex;
@@ -253,4 +254,208 @@ export const category = css`
 export const nameAndClose = css`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
+
+export const closeBtn = css`
+  cursor: pointer;
+`;
+
+export const containerTwoInModal = css`
+  display: flex;
+  flex-wrap: wrap;
+  width: 365px;
+  gap: 16px;
+`;
+
+export const priceInModal = css`
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+`;
+
+export const ratingAndLocationText = css`
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+`;
+
+export const modal = css`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  height: 720px;
+  overflow: auto;
+`;
+
+export const modalGallery = css`
+  display: flex;
+  gap: 16px;
+`;
+
+export const descriptionText = css`
+  color: rgb(71, 84, 103);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 24px;
+`;
+
+
+export const featuresContainer = css`
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+`;
+
+export const categoryFeatures = css`
+  border-radius: 100px;
+  background: rgb(242, 244, 247);
+  width: 25%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0 10px;
+`;
+
+export const containerFeatues = css`
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+`;
+
+export const secondContainer = css`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 450px;
+`;
+
+export const details = css`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
+export const detailsItem = css`
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+`;
+
+export const detailsTitle = css`
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+`;
+
+export const containerFeatuesTwo = css`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+export const formDiv = css`
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+`;
+
+export const formTitle = css`
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+`;
+
+export const formP = css`
+  color: rgb(71, 84, 103);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+`;
+
+export const inputField = css`
+  border-radius: 10px;
+  background: rgb(247, 247, 247);
+  padding: 18px 0;
+  padding-left: 18px;
+  width: 95%;
+  margin-bottom: 14px;
+  border: none;
+  color: rgba(16, 24, 40, 0.6);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+`;
+
+export const inputWithError = css`
+border: 2px solid red;
+`;
+
+
+export const reviewsContainer = css `
+  display: flex;
+  justify-content: space-between;
+`
+
+export const commentContainer  = css `
+display: flex;
+gap:24px;
+flex-direction: column;
+width: 430px;
+`
+
+export const avatar = css `
+border-radius: 50%;
+background-color: rgb(242, 244, 247);
+width: 60px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: rgb(228, 72, 72);
+font-family: Inter;
+font-size: 24px;
+font-weight: 600;
+line-height: 30px;
+`;
+
+export const avatarAndName = css `
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const customSelectStyles = css`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+`;
+
