@@ -9,22 +9,25 @@
 <li>Features include easy booking, quality campervans, 24/7 support, and flexible rental options.</li>
 <li>Users can explore the available campervans and learn more about the rental process.</li>
 </ul>
+<img src="./ReadMeImg/home.png" alt="Home">
 <li>Catalog</li>
 <ul>
 <li>The catalog page displays a range of campervans available for rental.</li>
 <li>Users can filter campervans based on location and other criteria.</li>
 <li>Additional features include the ability to add favorites, view details, and book rentals.</li>
 </ul>
+<img src="./ReadMeImg/catalog.png" alt="Catalog">
 <li>Favorites</li>
 <ul>
 <li>Users can save their favorite campervans for quick access.</li>
 <li>The favorites page displays a list of saved campervans, allowing users to manage their selections easily.</li>
 </ul>
+<img src="./ReadMeImg/favourites.png" alt="favourites">
 </ol>
 
 
 <h2>Technologies Used</h2>
-<ul style="list-style-type: square">
+<ul>
 <li>React: The frontend of the application is built using React, a popular JavaScript library for building user interfaces.</li>
 <li>Ant Design: Ant Design components are used for designing a clean and intuitive user interface.</li>
 <li>Redux: Redux is used for state management, allowing for efficient data handling across components.</li>
