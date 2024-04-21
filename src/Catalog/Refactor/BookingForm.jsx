@@ -10,27 +10,39 @@ import { ReactComponent as Notepad } from '../../svg/Notepad.svg';
 const Form = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [bookingDate, setBookingDate] = useState(new Date());
+  const [bookingDate, setBookingDate] = useState(null);
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState({});
+
+  const handleDateChange = (date) => {
+    setBookingDate(date);
+    if (date) {
+      document.getElementById("booking-date-input").placeholder = "";
+    } else {
+      document.getElementById("booking-date-input").placeholder = "Booking date";
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = {};
     if (!name.trim()) {
-      errors.name = 'Name is required';
+      errors.email = 'Name is required';
     }
     if (!email.trim()) {
       errors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = 'Email is invalid';
     }
     if (!bookingDate) {
       errors.bookingDate = 'Booking date is required';
     }
-
+  
     if (Object.keys(errors).length === 0) {
       onSubmit({ name, email, bookingDate, comment });
+      setName('');
+      setEmail('');
+      setBookingDate(null);
+      setComment('');
+      setErrors({});
     } else {
       setErrors(errors);
     }
@@ -48,11 +60,13 @@ const Form = ({ onSubmit }) => {
       </div>
       <div css={{ position: 'relative' }}>
         <DatePicker
-          onChange={date => setBookingDate(date)}
-          dateFormat="yyyy-MM-dd"
+          selected={bookingDate}
+          onChange={handleDateChange}
+          dateFormat="dd.MM.yyyy"
           placeholderText="Booking date"
           wrapperClassName="block-datepicker-wrapper"
           css={[inputField, errors.bookingDate && inputWithError]}
+          id="booking-date-input"
         />
         <div css={{ position: 'absolute', top: '45%', right: '10px', transform: 'translateY(-50%)' }}>
           <Notepad />
