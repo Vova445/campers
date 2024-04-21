@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/campers/static/css/main.e6c13ad2.css",
-    "main.js": "/campers/static/js/main.fd5733dd.js",
+    "main.css": "/campers/static/css/main.0b414be1.css",
+    "main.js": "/campers/static/js/main.669ab042.js",
     "static/media/Alcove.svg": "/campers/static/media/Alcove.c01ae846f518a25de0dce71627f85f78.svg",
     "static/media/FullyIntegrated.svg": "/campers/static/media/FullyIntegrated.abb7646803cd964a24df193f456e9754.svg",
     "static/media/Van.svg": "/campers/static/media/Van.1631e92e73e5e44f8d0fe8ab76cc3e4e.svg",
@@ -19,6 +19,7 @@
     "static/media/freezer.svg": "/campers/static/media/freezer.5cf66e48c6243ad992a883df54ed842e.svg",
     "static/media/TV.svg": "/campers/static/media/TV.083b40933c80114a020cbc656e246d17.svg",
     "static/media/Automatic.svg": "/campers/static/media/Automatic.e9e3b8f034239d7994d57d5b7f358ab3.svg",
+    "static/media/Notepad.svg": "/campers/static/media/Notepad.221c3588f51791ba96377a0c4b5e09cc.svg",
     "index.html": "/campers/index.html",
     "static/media/Microwave.svg": "/campers/static/media/Microwave.1b60e571ad6d8e48cf9dd76f6f2a9834.svg",
     "static/media/DisabledLocationIcon.svg": "/campers/static/media/DisabledLocationIcon.cd6f38e4e6fc7260194ddcbe34eeb0d3.svg",
@@ -29,11 +30,11 @@
     "static/media/Close.svg": "/campers/static/media/Close.8f4f03b5be3f0508917ad4d9488a1942.svg",
     "static/media/heart.svg": "/campers/static/media/heart.31f75c727755adf1149ed250702ddd5f.svg",
     "static/media/Shower.svg": "/campers/static/media/Shower.036c99992c6f4d0bba623ade738f2b9f.svg",
-    "main.e6c13ad2.css.map": "/campers/static/css/main.e6c13ad2.css.map",
-    "main.fd5733dd.js.map": "/campers/static/js/main.fd5733dd.js.map"
+    "main.0b414be1.css.map": "/campers/static/css/main.0b414be1.css.map",
+    "main.669ab042.js.map": "/campers/static/js/main.669ab042.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.fd5733dd.js"
+    "static/css/main.0b414be1.css",
+    "static/js/main.669ab042.js"
   ]
 }
