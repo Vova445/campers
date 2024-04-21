@@ -41,6 +41,8 @@ const Catalog = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCamper, setSelectedCamper] = useState(null);
   const favorites = useSelector((state) => state.favorites);
+  const [locationFilter, setLocationFilter] = useState('');
+
 
   useEffect(() => {
     axios
@@ -107,15 +109,35 @@ const Catalog = () => {
     setShowModal(false);
   };
 
+
+  const filterAdverts = () => {
+    const filteredAdverts = adverts.filter(ad => {
+      const locationMatch = ad.location.toLowerCase().includes(locationFilter.toLowerCase());
+     
+  
+      return locationMatch;
+    });
+  
+    setVisibleAdverts(filteredAdverts.slice(0, 4));
+    setLoadMoreVisible(filteredAdverts.length > 4);
+  };
+  
+  
+
   return (
-    <main style={{ marginTop: "30px" }}>
+    <main style={{ marginTop: "30px", marginBottom: "30px" }}>
       {loading ? (
         <div css={loaderContainer}>
           <div css={loader}></div>
         </div>
       ) : (
         <div css={containerStyles}>
-          <SidePanel locations={adverts.map(ad => ad.location)} />
+           <SidePanel
+            locations={adverts.map(ad => ad.location)}
+            onLocationChange={setLocationFilter}
+
+            onSearch={filterAdverts}
+          />
           <div>
             {visibleAdverts.map((ad) => (
               <div
@@ -137,7 +159,7 @@ const Catalog = () => {
                       €{parseFloat(ad.price).toFixed(2).toLocaleString()}{" "}
                       <FavouriteIcon 
                         style={{
-                          fill: favorites.includes(ad._id) ? "#E44848" : "none", cursor: 'pointer'
+                          fill: favorites.includes(ad._id) ? "#E44848" : "none", cursor: 'pointer',stroke: favorites.includes(ad._id) ? "none" : "#101828",
                         }}
                         onClick={() => handleAddToFavorites(ad._id)}
                       />

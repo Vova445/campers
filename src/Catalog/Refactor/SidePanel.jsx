@@ -27,7 +27,7 @@ import { ReactComponent as FullyIntegrated } from '../../svg/FullyIntegrated.svg
 import { ReactComponent as Alcove } from '../../svg/Alcove.svg';
 import { ReactComponent as EnabledLocation } from '../../svg/EnabledLocationIcon.svg';
 
-const SidePanel = ({ locations }) => {
+const SidePanel = ({ locations,onLocationChange, onSearch }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedEquipment, setSelectedEquipment] = useState([]);
   const [selectedType, setSelectedType] = useState('');
@@ -36,6 +36,7 @@ const SidePanel = ({ locations }) => {
 
   const handleLocationChange = event => {
     setSelectedLocation(event.target.value);
+    onLocationChange(event.target.value);
   };
 
   const handleEquipmentClick = equipment => {
@@ -49,6 +50,10 @@ const SidePanel = ({ locations }) => {
 
   const handleTypeClick = type => {
     setSelectedType(type);
+  };
+
+  const handleSearchClick = () => {
+    onSearch();
   };
 
   return (
@@ -195,7 +200,7 @@ const SidePanel = ({ locations }) => {
           </div>
         </div>
    
-      <button css={button}>Search</button>
+      <button css={button} onClick={handleSearchClick}>Search</button>
     </div>
   );
 };
